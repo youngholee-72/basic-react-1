@@ -1,0 +1,7 @@
+{
+  "posts": [
+    { "id": 1, "userId": 1, "title": "Hello json-server", "body": "This is the first post." },
+    { "id": 2, "userId": 1, "title": "Second post", "body": "Simple list/view practice." },
+    { "id": 3, "userId": 2, "title": "Third post", "body": "You can add more items freely." }
+  ]
+}
