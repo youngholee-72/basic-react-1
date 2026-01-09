@@ -11,5 +11,7 @@ npm install
 
 # run - package.json -> scripts.dev
 npm run dev
+
+npm install react-router-dom@6
 ```
 
