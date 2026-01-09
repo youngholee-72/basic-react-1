@@ -40,7 +40,6 @@ function App() {
       { activeTab == 'json-server' && <JsonApp />}
       { activeTab == 'json-jsonplaceholder' && <JsonplaceholderApp />}
     </>
-
   );
 }
 

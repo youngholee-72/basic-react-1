@@ -18,30 +18,50 @@ function JsonApp() {
     try {
       const data = await fetchPosts();
       const top = data.slice(0, 20);
+
+      console.log(top);
+     // console.log(JSON.stringify(top, null, 2))
+
       setPosts(top);
     } catch (error) {
       console.error(error);
     }
   }
+
   useEffect(() => {
     reloadPosts();
   }, []);
 
+  const loadPost = async (id: number) => {
+    try{
+      const data = await fetchPost(id);
+      setSelectedPost(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
     console.log(`selectedId : ${selectedId}`);
-    (async () => {
-      console.log(
-        "selectedId Changed so selectedPost changed, setSelectedPost cause reload again?"
-      );
+    if (selectedId === null) {
+      setSelectedPost(null);
+      return;
+    }
 
-      if (selectedId === null) {
-        setSelectedPost(null);
-        return;
-      }
+    loadPost(selectedId);
+    // (async () => {
+    //   console.log(
+    //     "selectedId Changed so selectedPost changed, setSelectedPost cause reload again?"
+    //   );
 
-      const data = await fetchPost(selectedId);
-      setSelectedPost(data);
-    })();
+    //   if (selectedId === null) {
+    //     setSelectedPost(null);
+    //     return;
+    //   }
+
+    //   const data = await fetchPost(selectedId);
+    //   setSelectedPost(data);
+    // })();
   }, [selectedId]);
 
   return (
