@@ -15,6 +15,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Path alias 설정 - @를 src 디렉토리로 매핑 */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

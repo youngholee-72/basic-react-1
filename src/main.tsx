@@ -1,4 +1,3 @@
- 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
@@ -8,19 +7,35 @@ import {
  } from 'react-router-dom'
 
 import './index.css'
-import Root from './routes/root.tsx'
-import ErrorPage from './error-page.tsx'
-import Contact from './routes/contact.tsx'
+import ErrorPage from '@/error-page.tsx'
+import News from '@/components/news/News.tsx'
+import Notice from '@/components/news/notice/Notice.tsx'
+import NewsHome from '@/components/news/NewsHome.tsx'
+import App from '@/App.tsx'
+import NoticeView from '@/components/news/notice/NoticeView'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <App />,
+    errorElement: <ErrorPage />,    
+  },
+  {
+    path: 'news',
+    element: <News />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/contacts/:contactId',
-        element: <Contact />,
+        index: true,
+        element: <NewsHome />,
+      },
+      {
+        path: '/news/notice',
+        element: <Notice />,
+      },
+      {
+        path: '/news/notice/:id',
+        element: <NoticeView />,
       }
     ]
   }
