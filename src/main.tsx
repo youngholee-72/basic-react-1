@@ -13,6 +13,7 @@ import Notice from '@/components/news/notice/Notice.tsx'
 import NewsHome from '@/components/news/NewsHome.tsx'
 import App from '@/App.tsx'
 import NoticeView from '@/components/news/notice/NoticeView'
+import NoticeEdit from './components/news/notice/NoticeEdit'
 
 const router = createBrowserRouter([
   {
@@ -34,8 +35,16 @@ const router = createBrowserRouter([
         element: <Notice />,
       },
       {
+        path: '/news/notice/new',
+        element: <NoticeEdit />,
+      },
+      {
         path: '/news/notice/:id',
         element: <NoticeView />,
+      },
+      {
+        path: '/news/notice/:id/edit',
+        element: <NoticeEdit />,
       }
     ]
   }

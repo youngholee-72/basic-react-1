@@ -111,6 +111,34 @@ export default function NoticeView() {
           >
             <h2 style={{ margin: 0 }}>공지 상세</h2>
             <div style={{ display: "flex", gap: "8px" }}>
+              {/* 편집 버튼 추가 */}
+              <button
+                onClick={() => navigate(`/news/notice/${id}/edit`)}
+                style={{
+                  padding: "4px 12px",
+                  backgroundColor: "#3992ff",
+                  color: "white",
+                  cursor: "pointer",
+                  border: "none",
+                  borderRadius: "4px",
+                  fontSize: "14px",
+                }}
+              >
+                편집
+              </button>
+
+              {/* 삭제 버튼 */}
+              <button
+                onClick={() => handleDeleteClick()}
+                style={{
+                  padding: "4px 12px",
+                  backgroundColor: "#ff4444",
+                  color: "white",
+                }}
+              >
+                삭제
+              </button>
+
               {/* 닫기 버튼 */}
               <button
                 onClick={() => navigate("/news/notice")}
@@ -126,18 +154,7 @@ export default function NoticeView() {
               >
                 닫기
               </button>
-
-              {/* 삭제 버튼 */}
-              <button
-                onClick={() => handleDeleteClick()}
-                style={{
-                  padding: "4px 12px",
-                  backgroundColor: "#ff4444",
-                  color: "white",
-                }}
-              >
-                삭제
-              </button>
+              
             </div>
           </div>
 

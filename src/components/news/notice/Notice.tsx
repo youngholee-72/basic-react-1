@@ -168,6 +168,7 @@ function Notice() {
             <h2 style={{ margin: 0 }}>Notice List</h2>
             <div style={{ display: "flex", gap: 8 }}>
               <button onClick={() => handleCreate()}>Create</button>
+              <button onClick={() => navigate('/news/notice/new')}>New</button>
               <button onClick={() => reloadPosts()}>Reload</button>
             </div>
           </div>
